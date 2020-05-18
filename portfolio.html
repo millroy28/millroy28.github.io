@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.top-container {
+  background-color: #eeeddf;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: rgb(243, 146, 81);
+  color: #2a0000;
+}
+
+.content {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+</head>
+<body>
+
+
+<div class="header" id="myHeader">
+  <h2>Roy Miller</h2>
+    <p>     <a href="index.html">Welcome</a>     <a href="about.html">About</a>     <a href="portfolio.html">Portfolio</a></p>
+</div>
+
+<div class="content">
+  <h3>Portfolio</h3>
+  <h4>Console Conway’s Game of Life</h4>
+  <a href="https://github.com/millroy28/Console-Conway-Life-Simulation" target="_blank">Repo</a>
+  <img src="life1.png" class="center">
+  <p>For those unfamiliar with Conway’s Game of Life, it is a mathematical model of living cells on a two dimensional grid. The rules are exceedingly simple:</p>
+  <ul>Every cell on the gird is either alive or dead.</ul>
+  <ul>If dead cell has exactly three live neighbors, it becomes alive.</ul>
+  <ul>If an alive cell has two or three neighbors, it remains alive.</ul>
+  <ul>If an alive cell has fewer than two or more than three neighbors, it dies.</ul>
+  <p>Out of these rules come complicated behaviors. More can be read <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">here.</a></p>
+  <p>Some years ago I created a Conway’s Game of Life in an Excel spreadsheet just to see if I could. I had to enable circular references, turn on manual calculation, and write a macro to loop that calculation. </p>
+  <p>My take differed from the classic Conway Game of Life in a few ways:</p>
+  <ul>it took place in a bound container, not an infinite expanse.</ul>
+  <ul>In addition, user did not put in initial conditions. Instead, there was a chance of “spontaneous birth”, wherein there was a small random chance a dead cell would come to life. After hundreds or perhaps thousands of generations of spontaneous births, eventually two or more would occur in such a configuration that a sustainable, chaotic, cluster of life would bloom.</ul>
+  <ul>Every turn a cell is alive, its level of “pollution” rises. Every time the cell is unoccupied, it falls. Pollution effects the rate of spontaneous births, as well as introducing the chance that a birth according to Conway’s rules succeeds, and finally, can create the possibility of spontaneous death in a cell that should remain alive.</ul>
+  <p>By adjusting the rates of chance for all these events, fascinating trends would occur. Pollution could be displayed in a “heat map” and populations that once spread across the entire field would begin to retreat to “safer areas”, only to eventually migrate away from them. Sometimes whole populations would die out, only to be reborn again once the environment recovered.</p>
+  <p>As a challenge I tried to see if I could replicate this in the form of a console application in C#</p>
+  <p>The application is currently in an early developmental stage limited functionality. Even in its formative state, it helps me learn and appreciate about the complexities of Conway’s game. For example, when I added the logic that reduced and eventually curtailed all spontaneous birth once pollution rose to a certain level, I hadn’t realized that I never added a corresponding spontaneous death. Over the course of hours a stable configuration formed in the center of the field. Outside of the field, pollution and population rose and fell in tailing periodic patterns, but every time the chaos of a new generation came in contact with the field, the stable pattern grew. I left it run and after a few hours and a hundred thousand generations, the whole screen settled into a stable always live pattern according to Conway’s rules. <b>Order from chaos!</b></p>
+  <img src="life2.png" class="center">
+  <p>Eventually I would like to turn it into a web application just for giggles.. My progress can be found <a href="https://github.com/millroy28/Console-Conway-Life-Simulation" target="_blank">here.</a> </p>
+  
+</div>
+
+<footer>
+    <p style="text-align: center;"><a href="index.html">Welcome</a>     <a href="about.html">About</a>     <a href="portfolio.html">Portfolio</a></p>
+</footer>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

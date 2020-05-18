@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.top-container {
+  background-color: #eeeddf;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: rgb(243, 146, 81);
+  color: #2a0000;
+}
+
+.content {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="header" id="myHeader">
+  <h2>Roy Miller</h2>
+    <p>     <a href="index.html">Welcome</a>     <a href="about.html">About</a>     <a href="portfolio.html">Portfolio</a></p>
+</div>
+
+<div class="content">
+  <h3>Hello and Welcome</h3>
+  <p>I am currently a full-time student in the C# .Net program at <a href="https://www.grandcircus.co/" target="_blank">Grand Circus<a/>. I live in Grand Rapids and I am looking forward to starting my development career here.</p>
+    <p>I am passionate about art, writing, and music. I love solving problems. My hobbies include music composition and home-recording, black and white film photography, writing fiction and poetry, analog synthesizers, experiments in vegetarian nacho recipes, fountain pens, typewriters, bike rides, and of course, spending time with my family.</p>
+  
+</div>
+
+<footer>
+    <p style="text-align: center;"><a href="index.html">Welcome</a>     <a href="about.html">About</a>     <a href="portfolio.html">Portfolio</a></p>
+</footer>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

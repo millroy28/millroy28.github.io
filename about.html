@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.top-container {
+  background-color: #eeeddf;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: rgb(243, 146, 81);
+  color: #2a0000;
+}
+
+.content {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="header" id="myHeader">
+  <h2>Roy Miller</h2>
+    <p>     <a href="index.html">Welcome</a>     <a href="about.html">About</a>     <a href="portfolio.html">Portfolio</a></p>
+</div>
+
+<div class="content">
+    <h3>Contact</h3>
+    <ul> <a href="https://www.linkedin.com/in/roy-miller-812b8b1b/" target="_blank"> LinkedIn </a> </ul>
+    <ul><a href="https://github.com/millroy28" target="_blank"> GitHub </a></ul>
+    <ul><a href="mailto:roydavidmiller.dev@gmail.com" target="_blank"> Email </a></ul>
+  <h3>About Me</h3>
+ <p>I received a Bachelor of Arts from Lehigh University in Bethlehem, Pennsylvania, with a major in Philosophy and a minor in creative writing. The curriculum was flexible and offered the opportunity to pursue many elective classes, including organic chemistry, formal logic, and introductory C++, and it was through an elective course that I discovered my love of creative writing.</p>
+ <p>Later, I returned to Lehigh University in a professional capacity as the Assistant Director of Student Center Facilities and Operations. In that role I became a hub between our internal departments and services while serving the needs of students, faculty, staff, and community who would use our spaces. I grew immensely from the challenges presented by balancing the needs of our community and our available resources while maintaining good working relationships with all of these departments.</p>
+ <p>My greatest professional achievement at Lehigh was migrating our extensive building supervisor documentation from binders into a wiki, so that topics could be searched by keyword and easily updated. I tackled the setup and installation of the wiki myself, dabbling in php for the first time. The project was so successful that at my supervisor’s urging I outlined the process and strategy and gave two presentations on the subject: one at an Association of College Unions International regional conference, and then later, at their 2009 national conference.</p>
+ <p>In 2010, I yearned for a change of pace. I pursued an opportunity to live simply in the woods of rural western Pennsylvania, where I got to experience keeping bees and raising goats. Professionally, however, the area did not offer many opportunities in higher education. I eventually re-started my career at Whirley DrinkWorks, a company that manufactures and decorates drinking containers for advertising and rewards programs. I started in an entry level assembly position on their factory floor. While this wasn’t the most intellectually challenging job in my career, through it I internalized the importance of efficiency through thoughtful planning, resource management, and organization.</p>
+ <p>I pursued and achieved various promotions within the factory operations in my time there, but my most challenging position came when I was tapped to learn how to set our mold schedule. I had to rely on MRP projections, consider the trends of previous orders, and remember many special case scenarios in order to schedule the order and quantity of components made on our injection molding presses. To date I have never learned a more difficult and demanding skill. I am proud to say that I did well and eventually my perseverance translated into a role as Scheduling Coordinator in the supply chain team.</p>
+ <p>Unfortunately the department was forced to shrink and I became the Accounts Payable Clerk. I had no previous accounting or clerical experience, but my fresh eyes and my drive for efficiency gave me perspective on how to streamline the process. I kept a spreadsheet with detailed metrics that, over time, revealed gaps in our processes that lead to lost time. With this data we were able to strategically implement small changes that greatly improved my efficiency.</p>
+ <p>In 2019 I found myself again yearning for change. I missed the culture and convenience that comes with city living, but I didn’t want to sacrifice all the politeness of rural PA. And so here I’ve come to settle in Grand Rapids, where I’m pursuing a career in software development. While I am grateful for the lessons every step of my professional journey has offered, I’ve felt stymied by the lack of opportunity that a small town has to offer. I’m looking forward to beginning this new chapter of my professional life that will afford me the room to develop and grow within the field.</p>
+</div>
+
+<footer>
+    <p style="text-align: center;"><a href="index.html">Welcome</a>     <a href="about.html">About</a>     <a href="portfolio.html">Portfolio</a></p>
+</footer>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>
